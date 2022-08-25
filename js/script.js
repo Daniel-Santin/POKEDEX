@@ -28,7 +28,7 @@ const renderPokemon = async (pokemon) =>{
     if(data){
         pokemon_name.innerHTML = data.name;
         pokemon_number.innerHTML = data.id + " – ";
-        pokemon_img.src = data["sprites"]["versions"]["generation-vii"]["ultra-sun-ultra-moon"]["front_shiny"];
+        pokemon_img.src = data['sprites']['versions']['generation-v']['black-white']['animated']["front_shiny"];
         input.value = "";
         searchPKM = data.id;
     }else{
