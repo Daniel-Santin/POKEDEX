@@ -25,16 +25,16 @@ const renderPokemon = async (pokemon) =>{
 
     const data = await fetchPokemon(pokemon);
 
-    if(data){
+    if (APIResponse.status == 200){
+        pokemon.style.display = "none"
+        pokemon_name.innerHTML = "Not Found ";
+        pokemon_number.innerHTML = "";
+    }else{
         pokemon_name.innerHTML = data.name;
         pokemon_number.innerHTML = data.id + " – ";
         pokemon_img.src = data["sprites"]["versions"]["generation-vii"]["ultra-sun-ultra-moon"]["front_shiny"];
         input.value = "";
         searchPKM = data.id;
-    }else{
-        pokemon.style.display = "none"
-        pokemon_name.innerHTML = "Not Found ";
-        pokemon_number.innerHTML = "";
     }
 }
 
