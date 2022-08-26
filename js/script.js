@@ -7,6 +7,7 @@ const input = document.querySelector(".input_search");
 
 const prevBt  = document.querySelector(".btn-prev");
 const nextBt = document.querySelector(".btn-next");
+const enterBt = document.querySelector(".btn-enter");
 
 let searchPKM = 1;
 
@@ -41,6 +42,10 @@ const renderPokemon = async (pokemon) =>{
 
 form.addEventListener("submit",(event) => {
     event.preventDefault();
+    renderPokemon(input.value.toLowerCase());
+});
+
+enterBt.addEventListener("click",() => {
     renderPokemon(input.value.toLowerCase());
 });
 
